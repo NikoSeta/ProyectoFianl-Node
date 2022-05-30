@@ -1,7 +1,7 @@
-require ("dotenv").config();
+require('dotenv').config()
 
-let puerto = {
-    port: process.env.PORT
-};
-
-module.exports = {puerto};
+module.exports = {
+  MONGO_URI: process.env.MONGO_URI || '',
+  FIRESTORE_FILE: process.env.FIRESTORE_FILE || '',
+  puerto: process.env.PORT
+}
