@@ -2,14 +2,14 @@ const express = require('express')
 const { Router } = express
 const productRouter = Router()
 
-// const { ProductosDaoArchivo } = require('../contenedores/daos/productos/ProductosDaoArchivo')
-// const productoDao = new productoDaoArchivo()
+const { ProductosDaoArchivo } = require('../contenedores/daos/productos/ProductosDaoArchivo')
+const productoDao = new productoDaoArchivo()
 
 //const { ProductosDaoMongo } = require('../contenedores/daos/productos/ProductosDaoMongoDB')
 //const productoDao = new productoDaoMongoDB()
 
-const { ProductosDaoFirebase } = require('../contenedores/daos/productos/ProductosDaoFirebase')
-const productoDao = new productoDaoFirestore()
+//const { ProductosDaoFirebase } = require('../../contenedores/daos/productos/ProductosDaoFirebase')
+//const productoDao = new productoDaoFirestore()
 
 productRouter.get('/', async (req, res) => {
   let productos = await productoDao.getAll();
